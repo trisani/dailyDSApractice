@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+    int n,temp,mid;
+    printf("enter the size of the ARRAY");
+    scanf("%d",&n);
+    int array[n];
+    printf("enter the array element:");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    if( n%2 !=0 ){
+   for(int k=0;k<n/2;k++)
+    {
+        temp=array[k];
+        array[k]=array[n-1-k];
+        array[n-1-k]=temp;
+    }
+    }
+    else{
+        for(int i=0;i<(n/2-1);i++)
+        {
+            temp=array[i];
+            array[i]=array[n-1-i];
+            array[n-1-i]=temp;
+        }
+        mid=array[n/2-1];
+        array[n/2-1]=array[n/2];
+        array[n/2]=mid;
+    }
+    printf("the array after reversing");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d",array[i]);
+    }
+    return 0;
+}
