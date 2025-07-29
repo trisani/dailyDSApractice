@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    int n,pos;
+    printf("enter no of elements of the ARRAY");
+    scanf("%d",&n);
+    int ar[100];
+    int ar2[100];
+    printf("enter the array element:");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&ar[i]);
+    }
+    printf("enter position");
+    scanf("%d",&pos);
+    for(int i=0;i<(n-(pos+1));i++)
+    {
+        ar2[i]=ar[pos+1+i];
+    }
+    for(int i=0;i<pos+1;i++)
+    {
+        ar2[n-1-i]=ar[pos-i];
+    }
+     for(int i=0;i<n;i++)
+    {
+        printf("%d",ar2[i]);
+    }
+    return 0;
+}
